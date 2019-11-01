@@ -3,7 +3,7 @@ from setuptools import setup
 requires = ['numpy', 'matplotlib.pyplot', 'pandas', 'scipy', 'sympy']
 
 package_dir = {'optrita' : 'optrita'}
-package_data = {'optrita : []}
+package_data = {'optrita : []'}
 
 setup(
 	name = 'optrita',
