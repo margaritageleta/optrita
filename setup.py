@@ -1,6 +1,11 @@
 from setuptools import setup
 
-requires = ['numpy', 'matplotlib.pyplot', 'pandas', 'scipy', 'sympy']
+requires = ['numpy', 'matplotlib.pyplot', 'pandas',  'sympy']
+
+packages = [
+	'optrita',
+	'optrita.linesearch'
+]
 
 package_dir = {'optrita' : 'optrita'}
 package_data = {'optrita : []'}
