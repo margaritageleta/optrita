@@ -1,2 +1,2 @@
 
-from .linesearch import BLS, GM, CGM, BFGS, contour_map
+from .base import BLS, GM, CGM, BFGS, contour_map
