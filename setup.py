@@ -21,3 +21,6 @@ setup(
 	package_data = package_data,
 	package_dir = package_dir
 )
+
+__author__ = {'3omni' : 'rita.geleta@jediupc.com'}
+__version__ = '1.0.0'
