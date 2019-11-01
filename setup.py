@@ -15,7 +15,7 @@ setup(
 	packages = packages,
 	version = '0.0.1',
 	license = 'MIT',
-	description = 'Optimization and Machine Learning from 0'
+	description = 'Optimization and Machine Learning from 0',
 	author = '3omni',
 	author_email = 'rita.geleta@jediupc.com',
 	url = 'https://github.com/margaritageleta/optrita',
