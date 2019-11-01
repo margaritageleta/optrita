@@ -17,6 +17,6 @@ import sympy as sy
 import matplotlib.pyplot as plt
 from .linesearch import *
 
-__all__ = ['np', 'pd', 'linesearch', '__author__', '__version__']]
+__all__ = ['np', 'pd', 'linesearch', '__author__', '__version__']
 
 
