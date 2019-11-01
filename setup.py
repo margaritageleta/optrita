@@ -8,7 +8,7 @@ packages = [
 ]
 
 package_dir = {'optrita' : 'optrita'}
-package_data = {'optrita : []'}
+package_data = {'optrita' : []}
 
 setup(
 	name = 'optrita',
