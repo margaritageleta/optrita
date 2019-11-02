@@ -1,10 +1,9 @@
-from setuptools import setup
+from distutils.core import setup
 
-requires = ['numpy', 'matplotlib.pyplot', 'pandas',  'sympy']
 
 packages = [
 	'optrita',
-	'optrita.linesearch'
+	'optrita.linesearch',
 ]
 
 package_dir = {'optrita' : 'optrita'}
@@ -12,16 +11,16 @@ package_data = {'optrita' : []}
 
 setup(
 	name = 'optrita',
-	packages = packages,
-	version = '0.0.1',
-	license = 'MIT',
-	description = 'Optimization and Machine Learning from 0',
+	version = '0.0.2',
 	author = '3omni',
 	author_email = 'rita.geleta@jediupc.com',
+	packages = ['optrita', 'optrita.linesearch'],
 	url = 'https://github.com/margaritageleta/optrita',
+	license = 'LICENSE.txt',
+	description = 'Optimization and Machine Learning from 0',
 	download_url = 'https://github.com/margaritageleta/optrita/archive/0.0.1.tar.gz',
 	keywords = ['python', 'optimization'],
-	install_requires = requires,
+	install_requires = ['numpy', 'matplotlib.pyplot', 'pandas',  'sympy'],
 	classifiers=[
     		'Development Status :: 3 - Alpha',     
     		'Intended Audience :: Developers',     
@@ -33,8 +32,8 @@ setup(
     		'Programming Language :: Python :: 3.6',
 		'Programming Language :: Python :: 3.7',
   	],
-	package_data = package_data,
-	package_dir = package_dir,
+	
+	#package_dir = package_dir,
 )
 
 __author__ = {'3omni' : 'rita.geleta@jediupc.com'}

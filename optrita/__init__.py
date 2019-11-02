@@ -1,10 +1,10 @@
 __author__ = {'3omni' : 'rita.geleta@jediupc.com'}
-__version__ = '1.0.0'
+__version__ = '0.0.1'
 
 """
 By 3omni (Rita Geleta)
 Oct, 2019
-	optrita version 1.0.0
+	optrita version 0.0.1
 	Optimization & Machine Learning from 0
 	:copyright: (c) 2019 3omni
 	:licence: .
