@@ -37,20 +37,19 @@ Optimization algorithms by Rita ♥️
 #### Second derivative methods
 
 ##### Newton Method
-The rationale behind the Newton’s method is to subtitute, at each iterate $x^k$, the true function $f$ by the quadratic approximation $f^k_Q$ around $x_k$:
-$$
-f(x^k+p) \approx f^k_Q(p) = f^k + \nabla f^{k^T}\cdot p + \frac{1}{2}p^T \cdot \nabla^2 f^k \cdot p 
-$$
-and then, to define the next iterate $x^{k+1}$ as $x^{k+1} = x^k +p^k$ with $p^k_N := \arg \min {f^k_Q(p)} = - \nabla^2f^{k^{-1}} \cdot \nabla f^k$
-$$
-x^{k+1} \leftarrow x^k - \nabla^2f^{k^{-1}} \cdot \nabla f^k
-$$
+The rationale behind the Newton’s method is to subtitute, at each iterate $x^k$, the true function $f$ by the quadratic approximation <a href="https://www.codecogs.com/eqnedit.php?latex=f^k_Q" target="_blank"><img src="https://latex.codecogs.com/gif.latex?f^k_Q" title="f^k_Q" /></a> around <a href="https://www.codecogs.com/eqnedit.php?latex=x_k" target="_blank"><img src="https://latex.codecogs.com/gif.latex?x_k" title="x_k" /></a>:
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=f(x^k&plus;p)&space;\approx&space;f^k_Q(p)&space;=&space;f^k&space;&plus;&space;\nabla&space;f^{k^T}\cdot&space;p&space;&plus;&space;\frac{1}{2}p^T&space;\cdot&space;\nabla^2&space;f^k&space;\cdot&space;p" target="_blank"><img src="https://latex.codecogs.com/gif.latex?f(x^k&plus;p)&space;\approx&space;f^k_Q(p)&space;=&space;f^k&space;&plus;&space;\nabla&space;f^{k^T}\cdot&space;p&space;&plus;&space;\frac{1}{2}p^T&space;\cdot&space;\nabla^2&space;f^k&space;\cdot&space;p" title="f(x^k+p) \approx f^k_Q(p) = f^k + \nabla f^{k^T}\cdot p + \frac{1}{2}p^T \cdot \nabla^2 f^k \cdot p" /></a>
+
+and then, to define the next iterate <a href="https://www.codecogs.com/eqnedit.php?latex=x^{k&plus;1}$&space;as&space;$x^{k&plus;1}&space;=&space;x^k&space;&plus;p^k" target="_blank"><img src="https://latex.codecogs.com/gif.latex?x^{k&plus;1}$&space;as&space;$x^{k&plus;1}&space;=&space;x^k&space;&plus;p^k" title="x^{k+1}$ as $x^{k+1} = x^k +p^k" /></a> with <a href="https://www.codecogs.com/eqnedit.php?latex=p^k_N&space;:=&space;\arg&space;\min&space;{f^k_Q(p)}&space;=&space;-&space;\nabla^2f^{k^{-1}}&space;\cdot&space;\nabla&space;f^k" target="_blank"><img src="https://latex.codecogs.com/gif.latex?p^k_N&space;:=&space;\arg&space;\min&space;{f^k_Q(p)}&space;=&space;-&space;\nabla^2f^{k^{-1}}&space;\cdot&space;\nabla&space;f^k" title="p^k_N := \arg \min {f^k_Q(p)} = - \nabla^2f^{k^{-1}} \cdot \nabla f^k" /></a>
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=x^{k&plus;1}&space;\leftarrow&space;x^k&space;-&space;\nabla^2f^{k^{-1}}&space;\cdot&space;\nabla&space;f^k" target="_blank"><img src="https://latex.codecogs.com/gif.latex?x^{k&plus;1}&space;\leftarrow&space;x^k&space;-&space;\nabla^2f^{k^{-1}}&space;\cdot&space;\nabla&space;f^k" title="x^{k+1} \leftarrow x^k - \nabla^2f^{k^{-1}} \cdot \nabla f^k" /></a>
 
 ###### Global Convergence:
-No guarantees! If $x^0$ is far from a strict minimizer $x^*$, $p^k_N$ may not be a descent direction.
+No guarantees! If <a href="https://www.codecogs.com/eqnedit.php?latex=x^0" target="_blank"><img src="https://latex.codecogs.com/gif.latex?x^0" title="x^0" /></a> is far from a strict minimizer <a href="https://www.codecogs.com/eqnedit.php?latex=x^*$,&space;$p^k_N" target="_blank"><img src="https://latex.codecogs.com/gif.latex?x^*$,&space;$p^k_N" title="x^*$, $p^k_N" /></a> may not be a descent direction.
 
 ###### Local Convergence:
-if the starting point $x^0$ is sufficiently close to $x^*$ then:
+if the starting point <a href="https://www.codecogs.com/eqnedit.php?latex=x^0" target="_blank"><img src="https://latex.codecogs.com/gif.latex?x^0" title="x^0" /></a> is sufficiently close to <a href="https://www.codecogs.com/eqnedit.php?latex=x^*" target="_blank"><img src="https://latex.codecogs.com/gif.latex?x^*" title="x^*" /></a> then:
 + $\{x^k\} \rightarrow x^*$
 + The order of convergence of $\{x^k\}^\infty_{k=0}$ is quadratic.
 + The sequence of gradient norms $\{\| \nabla f^k \|\}^\infty_{k=0}$ converges quadratically to zero.
