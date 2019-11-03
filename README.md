@@ -33,10 +33,84 @@ Optimization algorithms by Rita ♥️
 <hr>
 
 ### Gradient Method `GM`
+#### Optimize with `GM`
+```python
+import numpy as np 
+import optrita as opt
+
+# Define the function to minimize and its gradient:
+def f(x): return -x[0]**3 - (1/2)*x[0]**2 + (1/2)*x[1]**2 + (1/4)*x[0]*x[1] + x[0]
+def g(x): return np.array([-3*x[0]**2 - x[0] + (1/4)*x[1] + 1,
+                           x[1] + (1/4)*x[0]])
+
+# Define the initial point:
+x = np.array([[0.4, 0.6]]).T
+
+# Define the linesearch parameters:
+BLS_params = dict(alpha_max = 2.0,
+                  alpha_min = 1e-3,
+                  rho = 0.5,
+                  c1 = 0.01, c2 = 0.45,
+                  strong_wolfe = True, out = 0)
+
+# Optimize!
+Xk_GM, info_GM = opt.GM(x, f, g, BLS_params, eps = 1e-6, kmax = 1500, precision = 6)
+
+```
+<hr>
 
 ### Conjugate Gradient Method `CGM`
+#### Optimize with `CGM`
+```python
+import numpy as np 
+import optrita as opt
+
+# Define the function to minimize and its gradient:
+def f(x): return -x[0]**3 - (1/2)*x[0]**2 + (1/2)*x[1]**2 + (1/4)*x[0]*x[1] + x[0]
+def g(x): return np.array([-3*x[0]**2 - x[0] + (1/4)*x[1] + 1,
+                           x[1] + (1/4)*x[0]])
+
+# Define the initial point:
+x = np.array([[0.4, 0.6]]).T
+
+# Define the linesearch parameters:
+BLS_params = dict(alpha_max = 2.0,
+                  alpha_min = 1e-3,
+                  rho = 0.5,
+                  c1 = 0.01, c2 = 0.45,
+                  strong_wolfe = True, out = 0)
+
+# Optimize!
+Xk_CGM, info_CGM = opt.CGM(x, f, g, BLS_params, iCG = 1, iRC = 1, eps = 1e-6, kmax = 1500, precision = 6,nu = 0.1)
+
+```
+<hr>
 
 ### Broyden-Fletcher-Goldfarb-Shanno (BFGS) Method `BFGS`
+#### Optimize with `BFGS`
+```python
+import numpy as np 
+import optrita as opt
+
+# Define the function to minimize and its gradient:
+def f(x): return -x[0]**3 - (1/2)*x[0]**2 + (1/2)*x[1]**2 + (1/4)*x[0]*x[1] + x[0]
+def g(x): return np.array([-3*x[0]**2 - x[0] + (1/4)*x[1] + 1,
+                           x[1] + (1/4)*x[0]])
+
+# Define the initial point:
+x = np.array([[0.4, 0.6]]).T
+
+# Define the linesearch parameters:
+BLS_params = dict(alpha_max = 2.0,
+                  alpha_min = 1e-3,
+                  rho = 0.5,
+                  c1 = 0.01, c2 = 0.45,
+                  strong_wolfe = True, out = 0)
+
+# Optimize!
+Xk_BFGS, info_BFGS = opt.BFGS(x, f, g, BLS_params, eps = 1e-6, kmax = 1500, precision = 6)
+
+```
 <hr>
 
 #### ~ Second derivative methods ~
@@ -60,6 +134,33 @@ if the starting point <a href="https://www.codecogs.com/eqnedit.php?latex=x^0" t
 + <a href="https://www.codecogs.com/eqnedit.php?latex=\{x^k\}&space;\rightarrow&space;x^*" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\{x^k\}&space;\rightarrow&space;x^*" title="\{x^k\} \rightarrow x^*" /></a>
 + The order of convergence of <a href="https://www.codecogs.com/eqnedit.php?latex=\{x^k\}^\infty_{k=0}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\{x^k\}^\infty_{k=0}" title="\{x^k\}^\infty_{k=0}" /></a> is quadratic.
 + The sequence of gradient norms <a href="https://www.codecogs.com/eqnedit.php?latex=\{\|&space;\nabla&space;f^k&space;\|\}^\infty_{k=0}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\{\|&space;\nabla&space;f^k&space;\|\}^\infty_{k=0}" title="\{\| \nabla f^k \|\}^\infty_{k=0}" /></a> converges quadratically to zero.
+
+#### Optimize with `newton`
+```python
+import numpy as np 
+import optrita as opt
+
+# Define the function to minimize, its gradient and its hessian:
+def f(x): return -x[0]**3 - (1/2)*x[0]**2 + (1/2)*x[1]**2 + (1/4)*x[0]*x[1] + x[0]
+def g(x): return np.array([-3*x[0]**2 - x[0] + (1/4)*x[1] + 1,
+                           x[1] + (1/4)*x[0]])
+def h(x): return np.array([[-6*x[0]-1, 1/4],
+                           [1/4, 1]])
+
+# Define the initial point:
+x = np.array([[0.1, 0.6]]).T
+
+# Define the linesearch parameters:
+BLS_params = dict(alpha_max = 1.0,
+                 alpha_min = 1e-3,
+                 rho = 0.5,
+                 c1 = 0.01, c2 = 0.45,
+                 strong_wolfe = False, out = 0)
+
+# Optimize!
+Xk_N, info_N = opt.newton(x, f, g, h, BLS_params, eps = 10e-5, kmax = 100, precision = 6)
+
+```
 <hr>
     
 ### Modified Newton
