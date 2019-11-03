@@ -1,7 +1,8 @@
-** optrita **
+# optrita 
 Optimization algorithms by Rita ♥️
 
 *pip3 install* with `! pip3 install -i https://test.pypi.org/simple/ optrita==0.0.3` 
+<hr>
 
 ## Table of Contents
 - [**Non-linear Optimization**](#non-linear-optimization)
@@ -17,7 +18,8 @@ Optimization algorithms by Rita ♥️
             - [Modified Newton](#modified-newton)
                 - [Modified Newton's method based on Spectral Decomposition](#modified-newtons-method-based-on-spectral-decomposition)
                 - [Modified Newton's method based on the Cholesky factorization](#modified-newtons-method-based-on-the-cholesky-factorization)
-        
+<hr>
+
 ## Non-linear Optimization
 
 ### Parameters
@@ -46,6 +48,7 @@ and then, to define the next iterate <a href="https://www.codecogs.com/eqnedit.p
 <a href="https://www.codecogs.com/eqnedit.php?latex=x^{k&plus;1}&space;\leftarrow&space;x^k&space;-&space;\nabla^2f^{k^{-1}}&space;\cdot&space;\nabla&space;f^k" target="_blank"><img src="https://latex.codecogs.com/gif.latex?x^{k&plus;1}&space;\leftarrow&space;x^k&space;-&space;\nabla^2f^{k^{-1}}&space;\cdot&space;\nabla&space;f^k" title="x^{k+1} \leftarrow x^k - \nabla^2f^{k^{-1}} \cdot \nabla f^k" /></a>
 
 ###### Global Convergence:
+
 No guarantees! If <a href="https://www.codecogs.com/eqnedit.php?latex=x^0" target="_blank"><img src="https://latex.codecogs.com/gif.latex?x^0" title="x^0" /></a> is far from a strict minimizer <a href="https://www.codecogs.com/eqnedit.php?latex=x^*$,&space;$p^k_N" target="_blank"><img src="https://latex.codecogs.com/gif.latex?x^*$,&space;$p^k_N" title="x^*$, $p^k_N" /></a> may not be a descent direction.
 
 ###### Local Convergence:
