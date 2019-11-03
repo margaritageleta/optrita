@@ -11,7 +11,7 @@ package_data = {'optrita' : []}
 
 setup(
 	name = 'optrita',
-	version = '0.0.2',
+	version = '0.0.3',
 	author = '3omni',
 	author_email = 'rita.geleta@jediupc.com',
 	packages = ['optrita', 'optrita.linesearch'],
@@ -20,7 +20,7 @@ setup(
 	description = 'Optimization and Machine Learning from 0',
 	download_url = 'https://github.com/margaritageleta/optrita/archive/0.0.1.tar.gz',
 	keywords = ['python', 'optimization'],
-	install_requires = ['numpy', 'matplotlib.pyplot', 'pandas',  'sympy'],
+	install_requires = ['numpy', 'matplotlib', 'pandas',  'sympy'],
 	classifiers=[
     		'Development Status :: 3 - Alpha',     
     		'Intended Audience :: Developers',     
@@ -37,4 +37,4 @@ setup(
 )
 
 __author__ = {'3omni' : 'rita.geleta@jediupc.com'}
-__version__ = '0.0.1'
+__version__ = '0.0.3'
